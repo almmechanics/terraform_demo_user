@@ -10,10 +10,11 @@ resource "azurerm_resource_group" "sample" {
 }
 
 module "external_template" {
-  source              = "https://github.com/almmechanics/terraform_module_demo/archive/20191215.30.zip"
+  source = "github.com/almmechanics/terraform_module_demo?ref=20191215.30"
+
   location            = var.location
   id                  = var.id
   environment         = format("%03s%03d", var.environment, var.id)
   usage               = var.usage
-  resource_group_name = azurerm_resource_group.tester.name
+  resource_group_name = azurerm_resource_group.sample.name
 }
