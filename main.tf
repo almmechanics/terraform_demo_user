@@ -1,7 +1,7 @@
 data "azurerm_client_config" "current" {}
 
 resource "azurerm_resource_group" "sample" {
-  name     = format("rg_sample_%s", var.id)
+  name     = format("rg_sample_%03d", var.id)
   location = var.location
   tags = {
     usage       = var.usage
@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "sample" {
 }
 
 module "external_template" {
-  source = "github.com/almmechanics/terraform_module_demo?ref=20191216.1"
+  source = "github.com/almmechanics/terraform_module_demo?ref=20191216.3"
 
   location            = var.location
   id                  = var.id
