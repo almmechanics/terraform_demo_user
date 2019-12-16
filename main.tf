@@ -10,7 +10,7 @@ resource "azurerm_resource_group" "sample" {
 }
 
 module "external_template" {
-  source = "github.com/almmechanics/terraform_module_demo?ref=20191215.34"
+  source = "github.com/almmechanics/terraform_module_demo?ref=20191215.35"
 
   location            = var.location
   id                  = var.id
